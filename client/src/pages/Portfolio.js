@@ -1,9 +1,16 @@
 import '../styles/portfolio.css';
+import java from '../assets/java.svg';
 import c from '../assets/c.svg';
+import python from '../assets/python.svg';
+import javaScript from '../assets/js.svg';
+import nodeJs from '../assets/node-js.svg';
+import tailwind from '../assets/tailwind.svg';
+import react from '../assets/react.svg';
 import mysql from '../assets/mysql.svg';
-import visual_studio_code from '../assets/visual_studio_code.svg';
-import intellijidea from '../assets/intellijidea.svg';
-import phpstorm from '../assets/phpstorm.svg';
+import github from '../assets/github.svg';
+import visualStudioCode from '../assets/visual_studio_code.svg';
+import intellijIdea from '../assets/intellijidea.svg';
+import phpStorm from '../assets/phpstorm.svg';
 
 function Portfolio() {
     return (
@@ -117,24 +124,22 @@ function Portfolio() {
             <section className="skills" id="skills">
                 <h3>Technologies</h3>
                 <div className="technologies">
-                    <div className="icon-container"><i className="fa-brands fa-java fa"></i>Java</div>
+                    <div className="icon-container"><img src={java} className="icon" alt="Java" />Java</div>
                     <div className="icon-container"><img src={c} className="icon" alt="C#" />C#</div>
-                    <div className="icon-container"><i className="fa-brands fa-python fa"></i>Python</div>
-                    <div className="icon-container"><i className="fa-brands fa-js fa"></i>JavaScript</div>
-                    <div className="icon-container"><i className="fa-brands fa-html5 fa"></i>HTML5</div>
-                    <div className="icon-container"><i className="fa-brands fa-css3 fa"></i>CSS3</div>
-                    <div className="icon-container"><i className="fa-brands fa-php fa"></i>PHP</div>
+                    <div className="icon-container"><img src={python} className="icon" alt="Python" />Python</div>
+                    <div className="icon-container"><img src={javaScript} className="icon" alt="JavaScript" />JavaScript</div>
+                    <div className="icon-container"><img src={nodeJs} className="icon" alt="Node.JS" />Node.JS</div>
+                    <div className="icon-container"><img src={tailwind} className="icon" alt="Tailwind" />Tailwind</div>
+                    <div className="icon-container"><img src={react} className="icon" alt="React" />React</div>
                     <div className="icon-container"><img src={mysql} className="icon" alt="MySQL" />MySQL</div>
-                    <div className="icon-container"><i className="fa-brands fa-github fa"></i>Github</div>
-                    <div className="icon-container"><img src={visual_studio_code} className="icon" alt="VS Code" />VS Code</div>
-                    <div className="icon-container"><img src={intellijidea} className="icon" alt="IntelliJ" />IntelliJ</div>
-                    <div className="icon-container"><img src={phpstorm} className="icon" alt="PHPStorm" />PHPStorm</div>
-
+                    <div className="icon-container"><img src={github} className="icon" alt="GitHub" />Github</div>
+                    <div className="icon-container"><img src={visualStudioCode} className="icon" alt="VS Code" />VS Code</div>
+                    <div className="icon-container"><img src={intellijIdea} className="icon" alt="IntelliJ" />IntelliJ</div>
+                    <div className="icon-container"><img src={phpStorm} className="icon" alt="PHPStorm" />PHPStorm</div>
                 </div>
             </section>
             <footer>
                 <div className="contacts">
-
                 </div>
                 <div className="extra">
                     <p>Design and code by Emily Rose</p>

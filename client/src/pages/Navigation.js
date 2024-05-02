@@ -1,12 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
+import dragon from "../assets/dragon.svg";
 
 const Layout = () => {
   return (
     <>
-      <nav className="flex items-center sticky top-0 w-dvw h-24 z-50 bg-[#ec2a83]">
+      <nav className="flex items-center sticky top-0 w-100 h-24 z-50 bg-[#ec2a83]">
         <menu className="flex pl-6">
           <li className="bg-inherit pr-10">
-            <a href="/#home" aria-label="Back to top" className="navItem"><i className="fas fa-dragon"></i></a>
+            <a href="/#home" aria-label="Back to top" className="navItem"><img src={dragon} className="icon" alt="dragon icon" id="site-icon"/></a>
           </li>
           <li className="bg-inherit pr-10">
             <Link to="/" className="navItem">Home</Link>

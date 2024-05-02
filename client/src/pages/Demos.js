@@ -1,7 +1,7 @@
 export default function Demos() {
     return (
         <>
-            <section id="demo-body" className="flex flex-col lg:flex-row lg:h-dvh justify-center content-stretch p-20 gap-10 box-border text-center">
+            <section id="demo-body" className="flex flex-col lg:flex-row lg:h-dvh-nav justify-center content-stretch p-20 gap-10 box-border text-center">
                 <div className="grid grid-cols-1 border-4 border-pink-900 lg:basis-1/3 p-10 mb-20 gap-20 lg:gap-0 content-between lg:overflow-scroll no-scrollbar">
                     <h2 className="text-pink-700 text-7xl text-center mb-10 underline">Qu'est-ce que c'est!?</h2>
                     <h3 className="text-4xl">Browser game for French teachers and students. Questions are based on Maine Musicale's playlists.</h3>

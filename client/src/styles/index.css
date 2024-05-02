@@ -18,6 +18,10 @@ code {
     monospace;
 }
 
+img {
+  max-width: 100%;
+}
+
 @layer utilities {
       /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
@@ -27,5 +31,10 @@ code {
       .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
+    }
+
+    .h-dvh-nav {
+      /* Viewport height - navbar height */
+      height: calc(100vh - 6rem);
     }
   }
