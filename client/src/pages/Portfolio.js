@@ -3,14 +3,17 @@ import java from '../assets/java.svg';
 import c from '../assets/c.svg';
 import python from '../assets/python.svg';
 import javaScript from '../assets/js.svg';
+import kotlin from '../assets/kotlin.svg';
 import nodeJs from '../assets/node-js.svg';
 import tailwind from '../assets/tailwind.svg';
 import react from '../assets/react.svg';
 import mysql from '../assets/mysql.svg';
+import mongoDb from '../assets/mongodb.svg';
 import github from '../assets/github.svg';
 import visualStudioCode from '../assets/visual_studio_code.svg';
 import intellijIdea from '../assets/intellijidea.svg';
 import phpStorm from '../assets/phpstorm.svg';
+import androidStudio from '../assets/android-studio.svg';
 
 function Portfolio() {
     return (
@@ -87,12 +90,17 @@ function Portfolio() {
                     </div>
                     <div className="tile">
                         <div>
-                            <h3>Classroom Organiser</h3>
-                            <p>An intractable application with a graphical interface that takes a student name, associates it with a colour, and assigns them a random seat in the classNameroom.</p>
-                            <a href="https://github.com/roseemi/classNameroom-Organiser" title="Image by vectorjuice on Freepik" className="portfolio-project-link">Github: <i className="fas fa-code"></i></a>
+                            <h3>To-Do Android Application</h3>
+                            <p>A classic to-do mobile application built using Android Studio and Kotlin. The application uses Firebase Firestore as its database for persistent data,
+                                so entries and their statuses are always saved.
+                            </p>
+                            <a href="https://github.com/roseemi/To_Do_App_Android" title="Image by vectorjuice on Freepik" className="portfolio-project-link">Github: <i className="fas fa-code"></i></a>
+                            <p></p>
+                            <a href="https://www.youtube.com/watch?v=-QuAUog2gGg" target="_blank" className="portfolio-project-link">YouTube Demo:</a>
                             <ul>
-                                <li className="project-list-item">Java</li>
-                                <li className="project-list-item">FXML</li>
+                                <li className="project-list-item">Kotlin</li>
+                                <li className="project-list-item">XML</li>
+                                <li className="project-list-item">NoSQL</li>
                             </ul>
                         </div>
                     </div>
@@ -125,17 +133,20 @@ function Portfolio() {
                 <h3>Technologies</h3>
                 <div className="technologies">
                     <div className="icon-container"><img src={java} className="icon" alt="Java" />Java</div>
+                    <div className="icon-container"><img src={kotlin} className="icon" alt="Kotlin" />Kotlin</div>
                     <div className="icon-container"><img src={c} className="icon" alt="C#" />C#</div>
                     <div className="icon-container"><img src={python} className="icon" alt="Python" />Python</div>
                     <div className="icon-container"><img src={javaScript} className="icon" alt="JavaScript" />JavaScript</div>
                     <div className="icon-container"><img src={nodeJs} className="icon" alt="Node.JS" />Node.JS</div>
-                    <div className="icon-container"><img src={tailwind} className="icon" alt="Tailwind" />Tailwind</div>
                     <div className="icon-container"><img src={react} className="icon" alt="React" />React</div>
+                    <div className="icon-container"><img src={tailwind} className="icon" alt="Tailwind" />Tailwind</div>
                     <div className="icon-container"><img src={mysql} className="icon" alt="MySQL" />MySQL</div>
+                    <div className="icon-container"><img src={mongoDb} className="icon" alt="MongoDB" />MongoDB</div>
                     <div className="icon-container"><img src={github} className="icon" alt="GitHub" />Github</div>
                     <div className="icon-container"><img src={visualStudioCode} className="icon" alt="VS Code" />VS Code</div>
                     <div className="icon-container"><img src={intellijIdea} className="icon" alt="IntelliJ" />IntelliJ</div>
                     <div className="icon-container"><img src={phpStorm} className="icon" alt="PHPStorm" />PHPStorm</div>
+                    <div className="icon-container"><img src={androidStudio} className="icon" alt="Android Studio" />Android Studio</div>
                 </div>
             </section>
             <footer>

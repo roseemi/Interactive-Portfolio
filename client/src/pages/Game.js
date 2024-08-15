@@ -1,19 +1,20 @@
 import '../styles/game.css';
-import GameInterface from '../../src/pages/components/GameInterface.js';
-import IntroGame from '../../src/pages/components/IntroGame.js';
-import GameComplete from '../../src/pages/components/GameComplete.js';
+import GameInterface from '../../src/pages/game_components/GameInterface.js';
+import IntroGame from '../../src/pages/game_components/IntroGame.js';
+import GameComplete from '../../src/pages/game_components/GameComplete.js';
 import { useState } from 'react';
+// import { create } from 'zustand';
 
 export default function Game() {
-
-	const [gameMode, setGameMode] = useState(false);
+	
+	const [startNewGame, setStartNewGame] = useState(false);
 	const [gameComplete, setGameComplete] = useState(false);
 	const [playlist, setPlaylist] = useState(null);
 	const [playlistYear, setPlaylistYear] = useState(null);
 	const [totalScore, setTotalScore] = useState(0);
 
 	const toggleStartGameMode = async () => {
-		setGameMode(true);
+		setStartNewGame(true);
 		setGameComplete(false);
 	};
 	const toggleGameComplete = (score) => {
@@ -21,10 +22,42 @@ export default function Game() {
 		setTotalScore(score);
 	};
 	const toggleNewGame = () => {
-		setGameMode(false);
+		setStartNewGame(false);
 		setGameComplete(false);
 		setTotalScore(0);
 	};
+
+	/*
+	Attempted rewriting with zustand library.
+	Ended up being more code and complex than before, so I stuck with vanilla useState
+
+	const useGameStages = create((set) => ({
+		startNewGame: false,
+		gameComplete: false,
+		playlist: null,
+		playlistYear: null,
+		totalScore: 0,
+	
+		setPlaylist: (selectedPlaylist) => set({ playlist: selectedPlaylist }),
+		setPlaylistYear: (year) => set({ playlistYear: year }),
+		toggleStartGameMode: async () => {
+			useGameStages.setState({startNewGame: true, gameComplete: false})
+		},
+		toggleGameComplete: (score) => set({ gameComplete: true, totalScore: score }),
+		toggleNewGame: () => set({ startNewGame: false, gameComplete: false, totalScore: 0 }),
+	}));
+
+	const startNewGame = useGameStages((state) => state.startNewGame);
+	const gameComplete = useGameStages((state) => state.gameComplete);
+	const playlist = useGameStages((state) => state.playlist);
+	const playlistYear = useGameStages((state) => state.playlistYear);
+	const totalScore = useGameStages((state) => state.totalScore);
+	const setPlaylist = useGameStages((state) => state.setPlaylist);
+	const setPlaylistYear = useGameStages((state) => state.setPlaylistYear);
+	const toggleStartGameMode = useGameStages((state) => state.toggleStartGameMode);
+	const toggleGameComplete = useGameStages((state) => state.toggleGameComplete);
+	const toggleNewGame = useGameStages((state) => state.toggleNewGame); 
+	*/
 
 	return (
 		<>
@@ -56,9 +89,23 @@ export default function Game() {
 			</section>
 			<section id="game-body" className="flex min-h-dvh justify-center items-center text-center box-border">
 				<div className="flex flex-col max-h-11/12 w-full lg:w-1/2 gap-4 m-10 p-10 bg-opacity-10 bg-white rounded-lg shadow-lg box-border">
-					{!gameMode && !gameComplete && <IntroGame toggleStartGameMode={toggleStartGameMode} setPlaylistYear={setPlaylistYear} setPlaylist={setPlaylist} />}
-					{gameMode && !gameComplete && <GameInterface playlist={playlist} playlistYear={playlistYear} toggleGameComplete={toggleGameComplete} />}
-					{gameMode && gameComplete && <GameComplete totalScore={totalScore} toggleNewGame={toggleNewGame} />}
+					{!startNewGame && !gameComplete && 
+					<IntroGame 
+						toggleStartGameMode={toggleStartGameMode} 
+						setPlaylistYear={setPlaylistYear} 
+						setPlaylist={setPlaylist} 
+					/>}
+					{startNewGame && !gameComplete && 
+					<GameInterface
+						playlist={playlist} 
+						playlistYear={playlistYear} 
+						toggleGameComplete={toggleGameComplete} 
+						/>}
+					{startNewGame && gameComplete && 
+					<GameComplete 
+						totalScore={totalScore} 
+						toggleNewGame={toggleNewGame} 
+					/>}
 				</div>
 			</section>
 			<section id="game-rules" className="bg-[#cbd5e1]">
